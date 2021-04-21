@@ -12,8 +12,13 @@ for i in range (len(X)):
     trainingData.append([X[i][20], X[i][19], X[i][15], X[i][3], X[i][7], X[i][2], X[i][17], X[i][11], X[i][4]])
     trainingAns.append(X[i][0])
 
-clf = tree.DecisionTreeClassifier()
+
+clf = tree.DecisionTreeClassifier(max_depth=3, min_samples_split=0.99) 
+
+
 clf = clf.fit(trainingData, trainingAns)
+
+
 ans = clf.predict(trainingData)
 
 # print('tutaj odpowiedzi')
